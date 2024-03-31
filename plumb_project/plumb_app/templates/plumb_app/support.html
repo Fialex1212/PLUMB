@@ -1,0 +1,23 @@
+{% extends 'plumb_app/base.html' %}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static 'plumb_app/css/support.css' %}">{% endblock %}
+
+{% block title %}HElll - {{title}}{% endblock %}
+
+{% block content %}
+<div class="container">
+        <form class="backform">
+            <h2 class="backform-title">Contact us</h2>
+            <input class="input" type="text" placeholder="Ім'я*">
+            <input class="input" type="email" placeholder="Пошта*">
+            <textarea class="textarea" placeholder="Повідомлення*" name="" id="" cols="30" rows="10"></textarea>
+            <button class="backform-btn">Send</button>
+        </form>
+    </div>
+{% endblock%}
+
+
+{% block scripts %}
+    <script src="{% static 'plumb_app/js/slider.js' %}"></script>
+{% endblock %}

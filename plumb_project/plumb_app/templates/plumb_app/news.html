@@ -1,0 +1,34 @@
+{% extends 'plumb_app/base.html' %}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static 'plumb_app/css/news.css' %}">{% endblock %}
+
+{% block title %}- {{title}}{% endblock %}
+
+{% block content %}
+
+{% for new in news%}
+    <div class="container">
+        <h2 class="title">Новини</h2>
+        <div class="news">
+            <div class="news-block">
+                <h4 class="news-data">16 Березня</h4>
+                <div class="news-content">
+                    <img class="img" src="{{ new.img.url }}" alt="{{ new.title }}">
+                    <div class="news-text">
+                            <h2 class="news-title">{{ new.title }}The 15 best Matthew McConaughey movies and TV shows, ranked</h2>
+                        <p> {{ new.text }}Ever the charmer, Texas golden boy Matthew McConaughey got his start on the indie circuit in 1993 with Richard Linklater's Dazed and Confused. Only he could make the aging partier and human slimeball David Wooderson so endearing, and that charisma has remained a central pillar of his many performances. He's spent the last three decades in both comedic and dramatic roles, playing soulful fugitives, poetic lawmen, and coked-out buffoons with equal aplomb.
+                            With that acting range in mind, here are the 15 best Matthew McConaughey movies and TV shows, ranked.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% end for %}
+
+{% endblock%}
+
+
+{% block scripts %}
+    <script src="{% static 'plumb_app/js/slider.js' %}"></script>

@@ -1,0 +1,28 @@
+{% extends 'plumb_app/base.html' %}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static 'plumb_app/css/main.css' %}">{% endblock %}
+
+{% block title %}HElll - {{title}}{% endblock %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+    {{ user.username }}
+    {{ user.email }}
+    {{ user.id }}
+
+{% endblock%}
+
+
+{% block scripts %}
+
+{% endblock %}

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Montserrat:wght@200;300;700&display=swap');
+
+.backform{
+    margin: 0 auto;
+    width: 420px;
+    height: 90dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    row-gap: 40px;
+}
+
+.backform-title{
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+.input,
+.textarea{
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    border: 1px solid #a0a0a0;
+}
+
+.textarea{
+    outline: 0;
+    resize: none;
+}
+
+.backform-btn{
+    margin: 0 auto;
+    width: 120px;
+    height: 60px;
+    background-color: rgb(40, 26, 231);
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.backform-btn:hover{
+    background-color: #ffb326;
+    transition: .3s;
+}
