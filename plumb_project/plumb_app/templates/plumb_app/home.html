@@ -1,0 +1,104 @@
+{% extends 'plumb_app/base.html' %}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static 'plumb_app/css/main.css' %}">{% endblock %}
+
+{% block title %}HElll - {{title}}{% endblock %}
+
+{% block content %}
+<div class="slider">
+        <div class="container">
+          <div class="slider-inner">
+            <div class="mySlides fade">
+                <img src="{{ MEDIA_URL }}/poster1.jpg" alt="poster1" style="width: 100%" />
+            </div>
+            <div class="mySlides fade">
+              <img src="{{ MEDIA_URL }}plumb_app/home/slider/poster2.jpg" alt="poster2" style="width: 100%" />
+            </div>
+            <div class="mySlides fade">
+              <img src="{{ MEDIA_URL }}plumb_app/home/slider/poster3.jpg" alt="poster3" style="width: 100%" />
+            </div>
+            <div class="mySlides fade">
+              <img src="{{ MEDIA_URL }}plumb_app/home/slider/poster4.jpg" alt="poster4" style="width: 100%;" />
+            </div>
+            <span class="prev" onclick="plusSlides(-1)">❮</span>
+            <span class="next" onclick="plusSlides(1)">❯</span>
+          </div>
+          <br />
+          <div style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
+          <br />
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="container">
+            <div class="gallery">
+                <div class="gallery-left">
+                    <h1 class="gallery-title">Фільми, мультфільми та серіали без реклами</h1>
+                    <h2 class="gallery-subtitle">Виберіть із фільтрами за популярністю, жанром, оцінкою IMDb або рокомвипуску</h2>
+                </div>
+                <div class="gallery-right">
+                    <img src="{{ MEDIA_URL }}plumb_app/home/slider/poster4.jpg" alt="">
+                    <img src="/images/grid/poster-grid-2.jpg" alt="">
+                    <img src="/images/grid/poster-grid-3.jpg" alt="">
+                    <img src="/images/grid/poster-grid-4.jpg" alt="">
+                    <img src="/images/grid/poster-grid-5.jpg" alt="">
+                    <img src="/images/grid/poster-grid-6.jpg" alt="">
+                    <img src="/images/grid/poster-grid-7.webp" alt="">
+                    <img src="/images/grid/poster-grid-8.webp" alt="">
+                    <img src="/images/grid/poster-grid-9.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq">
+        <div class="container">
+            <div class="accordion">
+                <p class="faq-title">FAQ</p>
+                <div class="accordion-item">
+                    <input type="checkbox" id="accordion1">
+                    <label for="accordion1" class="accordion-item-title"><span class="icon"></span>Як підключити підписку дешевше?</label>
+                    <div class="accordion-item-desc">Щоб знизити вартість передплати до -45%, достатньо підключити її
+                        відразу на рік або два. Ціна залишиться нижчою на весь період. Крім
+                        того, ми постійно готуємо особисті пропозиції для постійних
+                        користувачів.</div>
+                </div>
+                <div class="accordion-item">
+                    <input type="checkbox" id="accordion2">
+                    <label for="accordion2" class="accordion-item-title"><span class="icon"></span>Чим відрізняються підписки?</label>
+                    <div class="accordion-item-desc">"Проста" - це підписка, де є найпопулярніші фільми та канали.
+                        "Проста+" додатково має колекцію фільмів від Disney
+                        Paramount. "Комфорт" додатково має канали від Nickelodeon,
+                        Eurosport, MTV. Ну, а "Максимальна" - найкрутіше, бо
+                        тут, серед іншого, є спортивні канали та передачі, які
+                        доступні лише на PLUMB.</div>
+                </div>
+                <div class="accordion-item">
+                    <input type="checkbox" id="accordion3">
+                    <label for="accordion3" class="accordion-item-title"><span class="icon"></span>Як перепідключити підписку?</label>
+                    <div class="accordion-item-desc">Підписку можна підключити і відключити в будь-який час. Це дуже
+                        легко зробити в кілька кліків від будь-якого пристрою.</div>
+                </div>
+                <div class="accordion-item">
+                    <input type="checkbox" id="accordion4">
+                    <label for="accordion4" class="accordion-item-title"><span class="icon"></span>Скільки пристроїв можна під'єднати до одного акаунта?</label>
+                    <div class="accordion-item-desc">Ви можете під'єднати будь-який пристрій до одного профілю. До 5 з них
+                        можна використовувати для одночасного перегляду фільмів і
+                        телевізора.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock%}
+
+
+{% block scripts %}
+    <script src="{% static 'plumb_app/js/slider.js' %}"></script>
+{% endblock %}

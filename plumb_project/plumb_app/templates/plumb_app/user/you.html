@@ -1,0 +1,35 @@
+{% extends 'plumb_app/base.html' %}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static 'plumb_app/css/user.css' %}">{% endblock %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="profile">
+        <div class="profile-info">
+            <div class="profile-img">
+
+            </div>
+            <div class="profile-text">
+                <p class="user-name">{{ user.username }}</p>
+                <p class="user-email">{{ user.email }}</p>
+            </div>
+        </div>
+        <div class="profile-buttons">
+            <div class="profile-button"><a href="{% url 'you_saved' %}">Saved movies</a></div>
+            <div class="profile-button"><a href="{% url 'change_username' %}">Change Username</a></div>
+            <div class="profile-button"><a href="{% url 'change_email' %}">Change Email</a></div>
+            <div class="profile-button"><a href="{% url 'change_password' %}">Change Password</a></div>
+            <div class="profile-button"><a href="{% url 'logout_page' %}">Logout</a></div>
+            <div class="profile-button"><a href="{% url 'delete_account' %}">Delete account</a></div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+
+{% block scripts %}
+
+{% endblock %}

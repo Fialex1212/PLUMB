@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'plumb_app/css/base.css' %}">
+    {% block links %}{% endblock %}
+    <title>PLUMB{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-display">
+                <div class="header-left">
+                    <div class="header-logo">
+                        <span><a href="{% url 'home' %}" class="logo-symbol">P</a></span>
+                        <span><a href="{% url 'home' %}" class="logo-symbol">L</a></span>
+                        <span><a href="{% url 'home' %}" class="logo-symbol">U</a></span>
+                        <span><a href="{% url 'home' %}" class="logo-symbol">M</a></span>
+                        <span><a href="{% url 'home' %}" class="logo-symbol">B</a></span>
+                    </div>
+                    <nav class="nav">
+                        <ul class="nav-list">
+                            <li class="dropdown">
+                                <a class="nav-item" href="{% url 'watch' %}">Дивитися</a>
+                                <div class="dropdown-content">
+                                    <a class="nav-item" href="{% url 'by_rating' %}">Рейтинг</a>
+                                    <br>
+                                    <a class="nav-item" href="{% url 'announcement' %}">Анонси</a>
+                                    <br>
+                                    <a class="nav-item" href="{% url 'by_gener' %}">За жанром</a>
+                                    <br>
+                                    <a class="nav-item" href="{% url 'recommends' %}">Рекомендаціі</a>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a href="{% url 'cinemas' %}">Кінотеатри</a></li>
+                            <li class="nav-item"><a href="{% url 'news' %}">Дайджест</a></li>
+                            <li class="nav-item"><a href="{% url 'random_movie' %}"gi>Random</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="header-right">
+                    <div class="search">
+                        <form class="search-bar" method="GET" action="{% url 'search' %}">
+                            <input class="search-input" type="text" placeholder="Search...">
+                        </form>
+                    </div>
+                    <div class="user-widgets">
+                        <div class="langue">
+                            <select class="select" name="" id="">
+                                <option class="options" value="">
+                                    UA
+                                </option>
+                                <option class="options" value="">
+                                    EN
+                                </option>
+                            </select>
+                        </div>
+                        <div class="account">
+                            {% if request.user.is_authenticated %}
+                                <a href="{% url 'you' %}">{{request.user.username}}</a>
+                            {% else %}
+                                <a href="{% url 'sing_up' %}">Профіль</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-horizontal">
+                <ul class="horizontal-list">
+                    <li class="list-title">Користувачі</li>
+                    <li class="list-item">
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'you' %}">Профіль</a>
+                        {% else %}
+                            <a href="{% url 'sing_up' %}">Профіль</a>
+                        {% endif %}
+                    </li>
+                    <li class="list-item">
+                        {% if request.user.is_authenticated %}
+                            <a href="{% url 'delete_account' %}">Видалити профіль</a>
+                        {% else %}
+                            <a href="{% url 'sing_up' %}">Видалити профіль</a>
+                        {% endif %}
+                    </li>
+                </ul>
+                <ul class="horizontal-column">
+                    <li class="list-title">Про нас</li>
+                    <li class="list-item">Політика конфіденційності</li>
+                    <li class="list-item">Наша історія</li>
+                </ul>
+                <ul class="horizontal-column">
+                    <li class="list-title">Підтримка</li>
+                    <li class="list-item"><a href="" type="gmail">plumbsupport@gmail.com</a></li>
+                    <li class="list-item"><a href="{% url 'support' %}">Зворятння форма</a></li>
+                </ul>
+            </div>
+            <div class="footer-vertical">
+                <p>@2023 PLUMB. Усі права захищені</p>
+                <div class="vertical-images">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button onclick="toTop()" class="to-top" id="to-top">
+        <div class="to-top-arrow">↑</div>
+    </button>
+    {% block scripts %}
+
+    {% endblock %}
+    <script src="{% static 'plumb_app/js/to_top.js' %}"></script>
+</body>
+</html>

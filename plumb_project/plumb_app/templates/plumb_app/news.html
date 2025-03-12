@@ -1,0 +1,33 @@
+{% extends 'plumb_app/base.html' %}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static 'plumb_app/css/news.css' %}">{% endblock %}
+
+{% block title %}- {{title}}{% endblock %}
+
+{% block content %}
+
+{% for new in news%}
+    <div class="container">
+        <h2 class="title">Новини</h2>
+        <div class="news">
+            <div class="news-block">
+                <h4 class="news-data">16 Березня</h4>
+                <div class="news-content">
+                    <img class="img" src="{{ new.img.url }}" alt="{{ new.title }}">
+                    <div class="news-text">
+                            <h2 class="news-title">{{ new.title }}</h2>
+                        <p>{{ new.text }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+{% endblock%}
+
+
+{% block scripts %}
+    <script src="{% static 'plumb_app/js/slider.js' %}"></script>
+{% endblock %}

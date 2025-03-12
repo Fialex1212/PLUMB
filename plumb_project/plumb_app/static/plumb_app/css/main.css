@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Jomhuria&family=Montserrat:wght@200;300;700&display=swap');
+
+/* Slider start */
+
+.slider{
+    margin: 120px 0px;
+}
+
+.slider-inner{
+    width: 74%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides img{
+    vertical-align: middle;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next{
+    border-radius: 3px 0px 0px 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #d5d5d5;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #ffb326;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* Slider end */
+
+/* Gallery start */
+
+.gallery{
+    margin-bottom: 70px;
+    display: flex;
+    column-gap: 50px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.gallery-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-right{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+}
+
+.gallery-right img{
+    width: 180px;
+    height: 260px;
+}
+
+.gallery-title{
+    margin-bottom: 60px;
+    padding-top: 220px;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.gallery-subtitle{
+    margin-bottom: 40px;
+}
+
+/* Gallery end */
+
+/* FAQ start */
+
+.faq{
+    margin-bottom: 120px;
+}
+
+.faq-title{
+    color: #fff;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.accordion{
+    display: flex;
+    flex-direction: column;
+    font-family: "Sora", sans-serif;
+    max-width: 991px;
+    min-width: 320px;
+    margin: 50px auto;
+    padding: 0 50px;
+}
+
+.accordion-item{
+    margin-top: 16px;
+    border: 1px solid #fcfcfc;
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+.accordion-item .accordion-item-title{
+    position: relative;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    font-size: 22px;
+    cursor: pointer;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 14px 20px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.accordion-item .accordion-item-desc{
+    display: none;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 300;
+    color: #444;
+    border-top: 1px dashed #ddd;
+    padding: 10px 20px 20px;
+    box-sizing: border-box;
+}
+
+.accordion-item input[type="checkbox"]{
+    position: absolute;
+    height: 0;
+    width: 0;
+    opacity: 0;
+}
+.accordion-item input[type="checkbox"]:checked ~ .accordion-item-desc{
+    display: block;
+}
+
+.accordion-item
+    input[type="checkbox"]:checked
+    ~ .accordion-item-title
+    .icon:after {
+    content: "-";
+    font-size: 20px;
+}
+
+.accordion-item input[type="checkbox"] ~ .accordion-item-title .icon:after{
+    content: "+";
+    font-size: 20px;
+}
+
+.accordion-item:first-child{
+    margin-top: 0;
+}
+
+.accordion-item .icon {
+    margin-left: 14px;
+}
+
+/* FAQ end*/

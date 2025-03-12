@@ -1,0 +1,52 @@
+{% extends 'plumb_app/base.html' %}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static 'plumb_app/css/exactly_movie.css' %}">{% endblock %}
+
+{% block title %} - {{movie.title}}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="movie">
+        <div class="movie-left">
+            <img src="{{movie.img.url}}" alt="">
+        </div>
+        <div class="movie-right">
+            <p class="movie-title">{{movie.title}}</p>
+            <p class="movie-description">{{movie.description}}</p>
+            <p class="movie-year-genre">{{movie.year}}, {{movie.genre}}</p>
+                {% if user.is_authenticated %}
+                    {% if user_saved_movie %}
+                        <form action="{% url 'save_movie' movie_id=movie.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Remove from Saved</button>
+                            {% if user_saved_movie.liked %}
+                                <p>Liked</p>
+                            {% endif %}
+                        </form>
+                    {% else %}
+                        <form action="{% url 'save_movie' movie_id=movie.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Save</button>
+                        </form>
+                    {% endif %}
+                {% endif %}
+            <button name="like">like</button>
+        </div>
+    </div>
+
+    <div class="comments">
+        <div class="create-comment">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+
+{% block scripts %}
+    <script src=""></script>
+{% endblock %}

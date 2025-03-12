@@ -1,0 +1,112 @@
+.fillters-drop-down{
+    margin-top: 50px;
+    text-align: center;
+}
+.fillters-block{
+    display: flex;
+    column-gap: 30px;
+    justify-content: center;
+}
+
+.movie-info{
+    color: white;
+}
+
+.drop-down{
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    margin: 0 auto;
+    padding: 0;
+    max-height: 172px;
+    width: 200px;
+    list-style: none;
+    overflow-y: auto;
+    font-family: Arial;
+    text-align: center;
+    color: white;
+    background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease;
+    z-index: 1000;
+}
+
+.drop-down::-webkit-scrollbar{
+    display: none;
+}
+
+.drop-down.closed{
+    max-height: 43px;
+    overflow: hidden;
+}
+
+.drop-down li{
+    position: relative;
+    display: block;
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 10px;
+    z-index: 2;
+}
+
+.drop-down li:first-child a:after{
+    content: "\25BC";
+    float: right;
+    margin-left: -30px;
+    margin-right: 5px;
+}
+
+.fillters{
+    margin: 100px 0px 150px 0px;
+    height: 100px;
+    width: 100%;
+}
+
+/* Movies start */
+
+.movies{
+
+    margin-bottom: 50px;
+    color: #fff;
+}
+
+.movies-grid{
+    margin: auto;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.movie{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-img{
+    width: 220px;
+    height: 320px;
+    transition: .3s;
+}
+
+.movie-img:hover{
+    -webkit-filter: brightness(50%);
+    transition: .3s;
+}
+
+.movie-title{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.movie-year-genre{
+    width: 200px;
+}
+
+
+
+/* Movies end */

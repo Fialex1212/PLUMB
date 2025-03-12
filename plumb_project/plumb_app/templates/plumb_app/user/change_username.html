@@ -1,0 +1,23 @@
+{% extends 'plumb_app/base.html' %}
+{% load static %}
+
+{% block links %}<link rel="stylesheet" href="{% static 'plumb_app/css/user.css' %}">{% endblock %}
+
+{% block title %}HElll - {{title}}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="profile">
+        <form class="profile-form" action="" method="POST">
+            {% csrf_token %}
+            <input type="text" name="newusername" placeholder="*new username">
+            <button>Submit</button>
+            {% include "plumb_app/messages.html" %}
+        </form>
+    </div>
+</div>
+{% endblock%}
+
+{% block scripts %}
+
+{% endblock %}

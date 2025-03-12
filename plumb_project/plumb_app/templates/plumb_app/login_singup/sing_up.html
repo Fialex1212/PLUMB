@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form action="" method="POST">
+      {% csrf_token %}
+        <label class="form-label">Username</label>
+        <input class="form-input" type="text" placeholder="Username" name="username">
+
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="Email" name="email">
+
+        <label class="form-label">Password</label>
+        <input class="form-input" type="password" placeholder="Password" name="password1">
+
+        <label class="form-label">Confirm Password</label>
+        <input class="form-input" type="password" placeholder="Confirm Password" name="password2">
+
+        <input class="submit" value="Sign up" type="submit">
+        <p>Don't have an account? <a href="{% url 'login' %}" name="Create User">Log in</a></p>
+        {{form.errors}}
+  </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <form action="" method="POST">
+      <form action="" method="POST">
+      {% csrf_token %}
+      <label class="form-label">Username</label>
+      <input class="form-input" type="text" placeholder="Username or Email" name="username">
+
+      <label class="form-label">Password</label>
+      <input class="form-input" type="password" placeholder="Password" name="password">
+
+      <input type="submit" class="submit" value="Log in">
+      <p>Don't have an account? <a href="{% url 'sing_up' %}">Sing up</a></p>
+      {% include "plumb_app/messages.html" %}
+  </form>
+</body>
+</html>
+
